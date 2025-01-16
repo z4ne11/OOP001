@@ -13,7 +13,7 @@
 
 from abc import abstractmethod
 
-class Dzivnieks(ABC): 
+class Dzivnieks(): 
     def __init__(self, vards, kajas): 
         self.vards = vards 
         self.kajas = kajas 
