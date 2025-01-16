@@ -13,11 +13,11 @@
 
 from abc import abstractmethod
 
-class Dzivnieks: 
+class Dzivnieks(ABC): 
     def __init__(self, vards, kajas): 
         self.vards = vards 
         self.kajas = kajas 
-    @abstractmethod
+    @abstractmethod #norāda ka nākamā metode būs abstrakta un ja ir abstrakts tad nevar uztaisīt konkrētu objektu
     def skanja(self): 
         print("random animal noise")
     def __str__(self):
