@@ -47,17 +47,16 @@ class VidusskolasSkolotajs(Skolotajs):
     otraisPrieksmets = "y priekšmets"
     pirmaisPrieksmetsStundas = 0
     otraisPrieksmetsStundas = 0
-    stunduSkNedela = 0
+    stunduSkNedKopa = 0
     def ievade(self):
         self.uzvards = input("Ievadiet vidusskolas skolotāja uzvārdu: ")
         self.pirmaisPrieksmets = input("Ievadiet pirmo pasniegto priekšmetu: ")
-        self.pirmaisPrieksmetsStundas = input("Ievadiet priekšmeta stundu skaitu: ")
+        self.pirmaisPrieksmetsStundas = int(input("Ievadiet priekšmeta stundu skaitu: "))
         self.otraisPrieksmets = input("Ievadiet otro pasniegto priekšmetu: ")
-        self.otraisPrieksmetsStundas = input("Ievadiet priekšmeta stundu skaitu: ")
-    def cikStundasKopa(self):
-        self.stunduSkNedela = self.pirmaisPrieksmetsStundas + self.otraisPrieksmetsStundas
+        self.otraisPrieksmetsStundas = int(input("Ievadiet priekšmeta stundu skaitu: "))
+        self.stunduSkNedKopa = self.pirmaisPrieksmetsStundas + self.otraisPrieksmetsStundas
     def izvade(self):
-        print(f"Vidusskolas (tips - {self.skolotajaTips}) skolotājs {self.uzvards} māca šādus priekšmetus: {self.pirmaisPrieksmets} un {self.otraisPrieksmets} kopā {self.stunduSkNedela} stundas")
+        print(f"Vidusskolas (tips - {self.skolotajaTips}) skolotājs {self.uzvards} māca šādus priekšmetus: {self.pirmaisPrieksmets} un {self.otraisPrieksmets} kopā {self.stunduSkNedKopa} stundas")
 
 
 
