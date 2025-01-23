@@ -1,12 +1,7 @@
-#git add . 
-#git commit -m"komentars"
-#git push origin
-
-'''
 class csdd():
-    def __init__(self, zimols = "unknown ", modelis = "unknown ", datums = "unknown ", masa = "unknown ", degviela = "unknown "):
-        self.zimols = zimols
-        self.modelis = modelis
+    def __init__(self, nosaukums = "unknown ", cilvekuSkaits = "unknown ", grupuSkaits = "unknown ", masa = "unknown ", degviela = "unknown "):
+        self.nosaukums = nosaukums
+        self.cilvekuSkaits = cilvekuSkaits
         self.datums = datums
         self.masa = masa
         self.degviela = degviela
@@ -15,7 +10,9 @@ class csdd():
 
 masina=csdd("Audi","A4", "22.10.20219", 1800, "BG")
 print(masina)
-'''
 
-class kubs():
-    del __init__(self, malasGarums, krasa)
+Turnīra nosaukums
+Cilvēku skaits
+Grupu skaits
+Sporta veids
+Sponsoru saraksts
