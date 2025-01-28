@@ -1,18 +1,33 @@
-class csdd():
-    def __init__(self, nosaukums = "unknown ", cilvekuSkaits = "unknown ", grupuSkaits = "unknown ", masa = "unknown ", degviela = "unknown "):
-        self.nosaukums = nosaukums
-        self.cilvekuSkaits = cilvekuSkaits
-        self.datums = datums
-        self.masa = masa
-        self.degviela = degviela
-    def __str__(self):
-        return f"zīmols: {self.zimols} \nmodelis: {self.modelis} \nreģistrācijas datums: {self.datums} \npilna masa: {self.masa} \ndegvielas veids: {self.degviela}" 
+class turnirs():
+    def __init__ (self, nosaukums = "", cilvSkaits = "", grupuSkaits = "", sports = "", sponsori = None):
+         if sponsori is None:
+            sponsori = []
+            self.nosaukums = nosaukums
+            self.cilvSkaits = cilvSkaits
+            self.grupuSkaits = grupuSkaits
+            self.sports = sports
+            self.sponsori = sponsori
 
-masina=csdd("Audi","A4", "22.10.20219", 1800, "BG")
-print(masina)
+    def sponsorsADD(self, NEWsponsors):
+        self.sponsori.append(NEWsponsors)
 
-Turnīra nosaukums
-Cilvēku skaits
-Grupu skaits
-Sporta veids
-Sponsoru saraksts
+    def izvade(self):
+        sponsori = "\n".join(self.sponsori)
+        print(f'Šis ir {self.sports} turnīrs "{self.nosaukums}", kurā piedalās {self.cilvSkaits} cilvēki, {self.grupuSkaits} grupās. \nSponsori:\n{sponsori}\n')
+        
+
+turnirs1 = turnirs("Last Dab 2025", "18", "5", "Tortnite")
+turnirs1.sponsorsADD("Adidaš")
+turnirs1.sponsorsADD("Mike")
+turnirs1.sponsorsADD("DolčeNKabana")
+
+
+turnirs2 = turnirs("Last Dab 2025", "18", "5", "Tortnite")
+turnirs2.sponsorsADD("Adidaš")
+turnirs2.sponsorsADD("Mike")
+turnirs2.sponsorsADD("DolčeNKabana")
+
+turnirs1.izvade()
+turnirs2.izvade()
+
+print("esmu te")
