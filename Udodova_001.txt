@@ -1,0 +1,10 @@
+1. b) Strukturēt kodu objektos, kas satur datus un darbības
+2. d) Polimorfisms (Polymorphism)
+3. a) class MyClass:
+4. a) Objekta iekšējo detaļu slēpšana un tikai nepieciešamo daļu atklāšana
+5. c) self
+6. c) Kļūda
+7. b) Klases īpašību un metožu pārmantošana no citas klases
+8. c) self.__variable
+9. c) __init__()
+10. a) Parent

@@ -22,10 +22,10 @@ turnirs1.sponsorsADD("Mike")
 turnirs1.sponsorsADD("DolčeNKabana")
 
 
-turnirs2 = turnirs("Last Dab 2025", "18", "5", "Tortnite")
-turnirs2.sponsorsADD("Adidaš")
-turnirs2.sponsorsADD("Mike")
-turnirs2.sponsorsADD("DolčeNKabana")
+turnirs2 = turnirs("2025", "66", "11", "Volleyball")
+turnirs2.sponsorsADD("Samsungs")
+turnirs2.sponsorsADD("Ventspils osta")
+turnirs2.sponsorsADD("Dior")
 
 turnirs1.izvade()
 turnirs2.izvade()
