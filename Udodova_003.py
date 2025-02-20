@@ -1,42 +1,71 @@
-# 3.uzd
-import math
+#3.uzd
+from abc import ABC
 
-class geometry():
-    def __init__(self, krasa = "", c_x = 0, c_y = 0):
-        self.krasa = krasa
-        self.c_x = c_x
-        self.c_y = c_y
-class kvadrats(geometry):
-    def __init__(self, krasa = "", c_x = 0, c_y = 0, malasGarums = 0):
-        super.__init__(krasa, c_x = 0, c_y = 0)
-        self.malasGarums = malasGarums
-        self.laukums = malasGarums*malasGarums
-        self.perimetrs = 4 * malasGarums
+class Telpa():
+    
+    def __init__(self, telpasNr = "", platiba = 0 , cilvekuSk = 0):
+        self.telpasNr = telpasNr
+        self.platiba = platiba
+        self.cilvekuSk = cilvekuSk
+    def cilvekuSkADD(self, cilvekiPievienojas):
+        self.cilvekuSk += cilvekiPievienojas
+    
+
+class Datorklase(Telpa):
+    def __init__(self, telpasNr = "", platiba = 0 , cilvekuSk = 0, datori = 0):
+        super().__init__(telpasNr = "", platiba = 0 , cilvekuSk = 0)
+        self.telpasNr = telpasNr
+        self.platiba = platiba
+        self.cilvekuSk = cilvekuSk
+        self.datori = datori
+        if self.cilvekuSk > self.datori:
+            self.zinojums1 = "; nepieciešami papildus datori"
+        else:
+            self.zinojums1 = ""
+ 
+        if self.cilvekuSk*0.8> self.platiba:
+            self.zinojums2 = "; pārāk daudz cilvēku"
+        else:
+            self.zinojums2 = ""
+
     def __str__(self):
-        return(f'Kvardāts ({self.c_x},{self.c_y}), mala = {self.malasGarums}, laukums = {self.laukums}, perimetrs = {self.perimetrs}')
+        return(f'Datorklase {self.telpasNr}, {self.platiba}kvm, {self.datori} datori, {self.cilvekuSk} cilvēki{self.zinojums1}{self.zinojums2}')
 
 
+class Kabinets(Telpa):
+    def __init__(self, telpasNr = "", platiba = 0 , cilvekuSk = 0, galduSk = 0):
+        super().__init__(telpasNr = "", platiba = 0 , cilvekuSk = 0)
+        self.telpasNr = telpasNr
+        self.platiba = platiba
+        self.cilvekuSk = cilvekuSk
+        self.galduSk = galduSk
+        if self.cilvekuSk > self.galduSk:
+            self.zinojums3 = "; nepieciešami papildus galdi"
+        else:
+            self.zinojums3 = ""
+ 
+        if self.cilvekuSk > self.platiba:
+            self.zinojums4 = "; pārāk daudz cilvēku"
+        else:
+            self.zinojums4 = ""
 
-class aplis(geometry):
-    def __init__(self, krasa = "", c_x = 0, c_y = 0, radiuss = 0):
-        super.__init__(krasa, c_x = 0, c_y = 0)
-        self.radiuss = radiuss
-        self.laukums = math.pi*self.radiuss**2
-        self.perimetrs = math.pi*2*self.radiuss
     def __str__(self):
-        return(f'Aplis ({self.c_x},{self.c_y}), rādiuss = {self.malasGarums}, laukums = {self.laukums}, perimetrs = {self.perimetrs}')
+        return(f'Kabinets {self.telpasNr}, {self.platiba}kvm, {self.galduSk} galdi, {self.cilvekuSk} cilvēki{self.zinojums3}{self.zinojums4}')
 
 
-figura1 = kvadrats("Melna", 3.0, 40, 3.433)
-print(figura1)
-figura2 = kvadrats("Melna", 30, 4.0, 7)
-print(figura2)
-figura3 = kvadrats("Melna", 0, 10, 8)
-print(figura3)
+telpa1 = Datorklase("34", 12, 20, 16)
+telpa1.cilvekuSkADD(10)
+print(telpa1)
+telpa2 = Datorklase("14", 12, 13, 10)
+print(telpa2)
+telpa3 = Datorklase("25", 15, 16, 20)
+print(telpa3)
 
-figura4 = aplis("Rozā", 3.0, 40, 3.433)
-print(figura4)
-figura5 = aplis("Rozā", 30, 4.0, 7)
-print(figura5)
-figura6 = aplis("Rozā", 0, 4.0, 8)
-print(figura6)
+print("\n")
+
+telpa4 = Kabinets("13", 12, 20, 16)
+print(telpa4)
+telpa5 = Kabinets("11", 12, 10, 10)
+print(telpa5)
+telpa6 = Kabinets("5", 16, 16, 10)
+print(telpa6)
