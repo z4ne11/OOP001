@@ -1,5 +1,6 @@
 import json
 import requests
+from collections import defaultdict
 
 # visas augstskolas Latvijā 
 skaits = 0
@@ -38,3 +39,24 @@ for https in augstskolasFRsaraksts:
     if any("https" in majaslapa for majaslapa in https["web_pages"]):
         HTTPSsk+=1
 print("Francijā ir", round(HTTPSsk / len(augstskolasFRsaraksts) * 100, 2),"procenti mājaslapas, kuras sākas ar https.")
+
+
+# 8. punkts
+EiropasValstis = [
+    "Albania", "Andorra", "Armenia", "Austria", "Azerbaijan", "Belarus", "Belgium",
+    "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark",
+    "Estonia", "Finland", "France", "Georgia", "Germany", "Greece", "Hungary", "Iceland",
+    "Ireland", "Italy", "Kazakhstan", "Kosovo", "Latvia", "Liechtenstein", "Lithuania",
+    "Luxembourg", "Malta", "Moldova", "Monaco", "Montenegro", "Netherlands", "North Macedonia",
+    "Norway", "Poland", "Portugal", "Romania", "Russia", "San Marino", "Serbia", "Slovakia",
+    "Slovenia", "Spain", "Sweden", "Switzerland", "Turkey", "Ukraine", "United Kingdom", "Vatican City"
+]
+
+augstskolu_skaits = defaultdict(int)
+for valsts in EiropasValstis:
+    konkretaValsts = requests.get(f'http://universities.hipolabs.com/search?country={valsts}')
+    augstskolas = konkretaValsts.json()
+    augstskolu_skaits[valsts] = len(augstskolas)
+
+max_valsts = max(augstskolu_skaits, key=augstskolu_skaits.get)
+print(f"Valsts ar visvairāk augstskolām ir {max_valsts}.")
